@@ -22,9 +22,7 @@ export class LoginComponent {
 
     if (email && password) {
       this.authService.login(email, password).subscribe({
-        next: (response: any) => {
-          console.log(response);
-          this.authService.storageToken(response.data.access_token);
+        next: () => {
           this.router.navigate(["/home"]);
         }, error: (error) => console.error(error)
       });

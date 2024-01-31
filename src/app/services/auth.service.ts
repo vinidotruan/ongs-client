@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment";
+import { map, tap } from "rxjs";
+import { LoginResponse } from "../models/responses/LoginResponse";
 
 @Injectable({
   providedIn: "root"
@@ -13,7 +15,10 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    return this.httpClient.post(`${this.url}/login`, { email, password });
+    return this.httpClient.post<LoginResponse>(`${this.url}/login`, { email, password }).pipe(tap({
+      next: response => this.storageToken(response.data.access_token),
+      error: error => console.error(error)
+    }), map(response => response.data));
   }
 
   storageToken(token: string) {
