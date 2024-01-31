@@ -15,4 +15,20 @@ export class AuthService {
   login(email: string, password: string) {
     return this.httpClient.post(`${this.url}/login`, { email, password });
   }
+
+  storageToken(token: string) {
+    localStorage.setItem("token", token);
+  }
+
+  getToken() {
+    return localStorage.getItem("token");
+  }
+
+  user() {
+    return this.httpClient.get(`${this.url}/user`);
+  }
+
+  hasToken(): boolean {
+    return !!this.getToken();
+  }
 }
