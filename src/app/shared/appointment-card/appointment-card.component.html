@@ -1,0 +1,24 @@
+<div class="container rounded-4 bg-primary text-white py-4">
+  <div class="row mb-2">
+    <div class="col d-flex align-items-center">
+      <span class="material-symbols-outlined fs-5">
+      event_available
+      </span>
+      <span class="fw-bold ms-2 fs-5">
+      {{ appointment.employee_service_provided.service_provided.name }} de {{ appointment.animal.name }}
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col d-flex flex-column">
+      <span class="px-2">Dia {{ appointment.schedule.start | date : "dd MMMM yyyy" }}
+        , {{ appointment.schedule.start | date : "EEEE" }} {{ appointment.schedule.start | date : "HH:mm" }}</span>
+      <span class="px-2"> {{ appointment.employee_service_provided.employee.name }}</span>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col">
+      <span class="badge rounded-pill text-bg-dark">{{ appointment.animal.breed }}</span>
+    </div>
+  </div>
+</div>

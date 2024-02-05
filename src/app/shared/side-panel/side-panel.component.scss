@@ -1,13 +1,8 @@
 aside {
-  max-width: 30vw;
+  max-width: 10vw;
 
-  .row {
-    width: 100px;
-
-    .col {
-      width: 100px;
-      height: 100px;
-    }
-
+  span {
+    width: 40px;
+    height: 40px;
   }
 }
