@@ -36,3 +36,15 @@ export class AppointmentsResponse {
     duration: string,
   };
 }
+
+export class OngResponse {
+  id: number;
+  name: string;
+  address: string;
+  whatsapp: string;
+  email: string;
+  user_id: string;
+  created_at: string;
+  updated_at: string;
+  services_provided: [];
+}

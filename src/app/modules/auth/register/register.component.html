@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-12 d-flex justify-content-center align-items-center">
+    <h1> Cadastre-se</h1>
+  </div>
+  <div class="col-xl-6 col-lg-6 col-md-12 shadow rounded p-5">
+    <form [formGroup]="form">
+      <div class="mb-3">
+        <label for="inputName" class="form-label">Nome da instituicao</label>
+        <input type="text" class="form-control" id="inputName" formControlName="name">
+      </div>
+      <div class="mb-3">
+        <label for="inputAddress" class="form-label">CEP do endereco</label>
+        <input type="text" class="form-control" id="inputAddress" formControlName="address">
+      </div>
+      <div class="mb-3">
+        <label for="inputPhone" class="form-label">Numero de Whatsapp</label>
+        <input type="text" class="form-control" id="inputPhone" formControlName="whatsapp">
+      </div>
+      <div class="mb-3">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail" formControlName="email">
+      </div>
+      <div class="mb-3">
+        <label for="inputPassword" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="inputPassword" formControlName="password">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="keepLogged">
+        <label class="form-check-label" for="keepLogged">Mantenha-me logado</label>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="registerOng()">Entrar</button>
+
+      <div class="alert alert-primary" role="alert" *ngIf="showSuccessAlert">
+        Cadastro feito com sucesso!
+      </div>
+    </form>
+  </div>
+</div>
+
+

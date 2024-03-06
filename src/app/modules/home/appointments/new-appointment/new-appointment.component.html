@@ -1,0 +1,41 @@
+<app-top-navbar></app-top-navbar>
+<app-side-panel></app-side-panel>
+<div class="container-fluid custom px-5 py-5 card border-0 ms-auto me-0">
+  <div class="row">
+    <form class="col-12">
+      <div class="mb-3">
+        <label for="ong" class="form-label">Ongs</label>
+        <select class="form-select" aria-label="Default select example" id="ong">
+          <option selected>Clique para escolher uma Ong</option>
+          <option *ngFor="let ong of ongs$ | async" (click)="getProvidedServices(ong)"> {{ ong.name }}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="providedServices" class="form-label">Servicos Prestados</label>
+        <select class="form-select" aria-label="Default select example" id="providedServices">
+          <option selected>Clique para escolher um servico</option>
+          <option *ngFor="let service of servicesProvided">{{ service.service_name }}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="employee" class="form-label">Profissional</label>
+        <select class="form-select" aria-label="Default select example" id="employee">
+          <option selected>Clique para escolher um profissional</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="animal" class="form-label">Animalzinho</label>
+        <select class="form-select" aria-label="Default select example" id="animal">
+          <option selected>Clique para escolher um dos seus animaiszinhos</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+  </div>
+</div>
+<pre>
+  {{ servicesProvided|json }}
+</pre>

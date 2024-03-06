@@ -7,7 +7,12 @@ const routes: Routes = [{
 }, {
   path: "home",
   loadChildren: () => import("./modules/home/home.module").then(m => m.HomeModule)
-}];
+}, {
+  path: "",
+  pathMatch: "full",
+  redirectTo: "auth"
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

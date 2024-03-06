@@ -1,3 +1,12 @@
 body {
   background-color: #efefef
 }
+
+.container-fluid {
+  margin-top: 5rem;
+
+  &.custom {
+    max-width: calc(100% - 10vw);
+  }
+}
+

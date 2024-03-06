@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-12 shadow rounded p-5">
+  <div class="col-xl-6 col-lg-6 col-md-12 shadow rounded p-5">
     <form [formGroup]="form">
       <div class="mb-3">
         <label for="inputEmail" class="form-label">Email</label>
@@ -14,6 +14,7 @@
         <label class="form-check-label" for="keepLogged">Mantenha-me logado</label>
       </div>
       <button type="submit" class="btn btn-primary" (click)="login()">Entrar</button>
+      <a class="" routerLink="/auth/register"> Quero me cadastrar</a>
     </form>
   </div>
 </div>

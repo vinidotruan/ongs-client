@@ -16,7 +16,8 @@ export class AppointmentsService {
   }
 
   getAppointments(): Observable<AppointmentsResponse> {
-    return this.http.get<ApiResponse<AppointmentsResponse>>(`${this.url}/appointments`).pipe(map(response => response.data));
+    return this.http.get<ApiResponse<AppointmentsResponse>>(`${this.url}/appointments`)
+      .pipe(map(response => response.data));
   }
 
 }
